@@ -66,6 +66,11 @@ function unset_perf_vars() {
   unset RUBY_HEAP_FREE_MIN
 }
 
+# renames the current tab on iTerm2 (OS X only)
+function tabname() {
+  echo -ne "\033]0;"$@"\007";
+}
+
 # Create a data URL from an image (works for other file types too, if you tweak the Content-Type afterwards)
 dataurl() {
   echo "data:image/${1##*.};base64,$(openssl base64 -in "$1")" | tr -d '\n'
