@@ -114,7 +114,7 @@ alias got='git '
 alias get='git '
 
 # rails
-alias integrate="unset_perf_vars; rvm use ruby-1.9.3-p125@myfinance --create; bundle; RAILS_ENV=test time rake integrate; rvm use ruby-1.9.3-p125-perf@myfinance --create; bundle; set_perf_vars; say 'integration finished'"
+alias integrate="bundle && RAILS_ENV=test IGNORE_GC_PERFORMANCE_FILE=true time memusg bundle exec rake integrate && say 'integration finished'"
 alias tlog='tail -f log/development.log'
 alias bex="bundle exec"
 alias rs='script/rails server'

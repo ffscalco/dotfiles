@@ -134,15 +134,6 @@ reload() {
   source ~/.bash_profile;
 }
 
-# run rake without worring about
-# bundler wrapper.
-function rake {
-  if [ -e Gemfile ]; then
-    bundle exec rake $@
-  else
-    `which rake` $@
-  fi
-}
 # Open a new SSH tunnel.
 #
 #   $ tunnel                    # Open dynamic proxy for my own domain
