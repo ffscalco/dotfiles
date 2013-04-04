@@ -91,6 +91,7 @@ alias start_memcached='/usr/local/bin/memcached'
 alias start_mysql='mysql.server start'
 alias stop_mysql='mysql.server stop'
 alias start_redis='redis-server /usr/local/etc/redis.conf'
+alias start_elasticsearch='elasticsearch -f -D es.config=/usr/local/opt/elasticsearch/config/elasticsearch.yml'
 
 # git
 alias gl='git pull'
