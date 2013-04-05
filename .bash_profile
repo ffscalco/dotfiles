@@ -15,4 +15,7 @@ source $HOME/.bash_profile.d/settings.sh
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 export PATH=$PATH:$HOME/.rvm/bin
 
+# Ruby performance variables
+set_perf_vars
+
 export PATH="$HOME/bin:$PATH"
