@@ -197,3 +197,8 @@ gzipped() {
 alarm() {
   echo "afplay /System/Library/Sounds/Basso.aiff && /usr/local/bin/growlnotify -t Alarm -s -d alarm -a /Applications/iCal.app -m '$2'" | at $1
 }
+
+# Truncates all files ending in .log on the current folder.
+clear_logs() {
+  find . -name '*.log' -type f -exec cp /dev/null {} \;
+}
