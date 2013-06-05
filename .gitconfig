@@ -39,5 +39,6 @@
   who = shortlog -s --
   fl = log -p
   dw = diff --word-diff
+  update = pull --rebase origin master
 [help]
   autocorrect = 1
