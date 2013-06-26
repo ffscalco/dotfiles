@@ -39,6 +39,7 @@
   who = shortlog -s --
   fl = log -p
   dw = diff --word-diff
+  update = pull --rebase origin master
   list-branch-diffed-files = "diff --diff-filter=ACMRTUXB --name-only master -- spec test"
 [help]
   autocorrect = 1
