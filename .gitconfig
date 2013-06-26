@@ -39,5 +39,11 @@
   who = shortlog -s --
   fl = log -p
   dw = diff --word-diff
+  list-branch-diffed-files = "diff --diff-filter=ACMRTUXB --name-only master -- spec test"
 [help]
   autocorrect = 1
+[user]
+  name = Rodrigo Tassinari de Oliveira
+  email = rodrigo@pittlandia.net
+[github]
+  user = rtopitt

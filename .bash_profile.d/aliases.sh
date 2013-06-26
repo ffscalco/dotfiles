@@ -112,6 +112,7 @@ alias glom='git pull origin master'
 alias grpo='git remote prune origin'
 alias got='git '
 alias get='git '
+alias gbspecs="git list-branch-diffed-files | egrep --color=never '_(spec|test).rb'"
 
 # rails
 alias integrate="unset_perf_vars && RAILS_ENV=test IGNORE_GC_PERFORMANCE_FILE=true time memusg bundle exec rake integrate && set_perf_vars && say 'integration finished'"
