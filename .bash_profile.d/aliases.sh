@@ -122,6 +122,7 @@ alias rs='script/rails server'
 alias rc='script/rails console'
 alias rg='script/rails generate'
 alias fs='foreman start -f Procfile.development'
+alias branchspec="bundle exec rspec `gbspecs | sed 's/src\///'`"
 
 alias growl="growlnotify"
 alias psgrep="ps aux | egrep -v egrep | egrep"
