@@ -81,13 +81,11 @@ alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume 7'"
 alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
 
-alias qlf='qlmanage -p "$@" >& /dev/null'
-
 # servers (homebrew)
 alias start_postgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias stop_postgres='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 alias start_mongodb='mongod run --config /usr/local/etc/mongod.conf'
-alias start_memcached='/usr/local/bin/memcached'
+alias start_memcached='/usr/local/bin/memcached -v'
 alias start_mysql='mysql.server start'
 alias stop_mysql='mysql.server stop'
 alias start_redis='redis-server /usr/local/etc/redis.conf'
@@ -108,6 +106,7 @@ alias gs='git status'
 alias gx='gitx --all'
 alias gitx='open -a /Applications/GitX.app .'
 alias gpom='git push origin master'
+alias glo='git pull origin'
 alias glom='git pull origin master'
 alias grpo='git remote prune origin'
 alias got='git '
@@ -122,6 +121,7 @@ alias rs='script/rails server'
 alias rc='script/rails console'
 alias rg='script/rails generate'
 alias fs='foreman start -f Procfile.development'
+alias fsb='foreman start -f Procfile.benchmark'
 alias branchspec="bundle exec rspec $(git diff --diff-filter=ACMRTUXB --name-only master -- spec test | egrep --color=never '_(spec|test).rb' | sed 's/src\///')"
 
 alias growl="growlnotify"
