@@ -12,8 +12,7 @@ source $HOME/.bash_profile.d/settings.sh
 [ -r $HOME/.bash_profile_extras ] && source $HOME/.bash_profile_extras
 
 # This loads RVM into a shell session.
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-export PATH=$PATH:$HOME/.rvm/bin
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" && export PATH=$PATH:$HOME/.rvm/bin
 
 # Ruby performance variables
 set_perf_vars
