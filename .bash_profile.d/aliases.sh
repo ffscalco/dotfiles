@@ -115,7 +115,7 @@ alias gbspecs="git list-branch-diffed-files | egrep --color=never '_(spec|test).
 
 # rails
 alias integrate="unset_perf_vars && RAILS_ENV=test IGNORE_GC_PERFORMANCE_FILE=true time memusg bundle exec rake integrate && set_perf_vars && say 'integration finished'"
-alias integrate_lowmem="unset_perf_vars && RAILS_ENV=test IGNORE_GC_PERFORMANCE_FILE=true time memusg bundle exec rspec spec/helpers/* spec/routing/* spec/lib/* spec/mailers/* spec/workers/* && RAILS_ENV=test IGNORE_GC_PERFORMANCE_FILE=true time memusg bundle exec rspec spec/models/* && RAILS_ENV=test IGNORE_GC_PERFORMANCE_FILE=true time memusg bundle exec rspec spec/controllers/* && RAILS_ENV=test IGNORE_GC_PERFORMANCE_FILE=true time memusg bundle exec rspec features/*_spec.rb && set_perf_vars && say 'integration finished'"
+alias integrate_lowmem="unset_perf_vars && bundle exec rails db:migrate db:test:prepare && RAILS_ENV=test IGNORE_GC_PERFORMANCE_FILE=true time memusg bundle exec rspec spec/helpers/* spec/routing/* spec/lib/* spec/mailers/* spec/workers/* && RAILS_ENV=test IGNORE_GC_PERFORMANCE_FILE=true time memusg bundle exec rspec spec/models/* && RAILS_ENV=test IGNORE_GC_PERFORMANCE_FILE=true time memusg bundle exec rspec spec/controllers/* && RAILS_ENV=test IGNORE_GC_PERFORMANCE_FILE=true time memusg bundle exec rspec features/*_spec.rb && set_perf_vars && say 'integration finished'"
 alias tlog='tail -f log/development.log'
 alias bex="bundle exec"
 alias rs='script/rails server'
