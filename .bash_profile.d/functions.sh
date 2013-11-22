@@ -202,3 +202,8 @@ alarm() {
 clear_logs() {
   find . -name '*.log' -type f -exec cp /dev/null {} \;
 }
+
+# Runs rspec for all files with content matching the supplied expression
+function rspec_for () {
+  grep -lir $1 spec/**/*_spec.rb | xargs bundle exec rspec
+}
