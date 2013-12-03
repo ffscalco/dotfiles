@@ -207,3 +207,24 @@ clear_logs() {
 function rspec_for () {
   grep -lir $1 spec/**/*_spec.rb | xargs bundle exec rspec
 }
+
+# Runs all specs, one kind at a time
+myfinance_all_tests () {
+  echo '**********************************************************'
+  echo 'Executando migração de dados'
+  bundle exec rake db:migrate db:test:prepare
+  dirs=($(find spec -type d -depth 1 ! -name factories ! -name support ! -name fixtures ! -name javascripts ! -name tmp))
+  for dirname in $dirs
+  do
+    echo '**********************************************************'
+    echo "Executando os testes de $dirname"
+    RAILS_ENV=test IGNORE_GC_PERFORMANCE_FILE=true bundle exec rspec $dirname
+  done
+  echo '**********************************************************'
+  echo 'Executando os testes de javascript'
+  RAILS_ENV=test IGNORE_GC_PERFORMANCE_FILE=true bundle exec rake spec:javascript
+  echo '**********************************************************'
+  echo 'Executando os testes de integração'
+  RAILS_ENV=test IGNORE_GC_PERFORMANCE_FILE=true bundle exec rspec features/*_spec.rb
+  echo
+}
