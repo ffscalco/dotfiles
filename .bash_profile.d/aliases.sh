@@ -127,3 +127,6 @@ alias branchspec="bundle exec rspec $(git diff --diff-filter=ACMRTUXB --name-onl
 
 alias growl="growlnotify"
 alias psgrep="ps aux | egrep -v egrep | egrep"
+
+# mac os x apps
+alias mou='open -a Mou' # opens a existing file in Mou.app via "mou filename.md"
