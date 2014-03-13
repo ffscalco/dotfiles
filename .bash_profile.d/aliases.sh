@@ -130,3 +130,15 @@ alias psgrep="ps aux | egrep -v egrep | egrep"
 
 # mac os x apps
 alias mou='open -a Mou' # opens a existing file in Mou.app via "mou filename.md"
+
+# vagrant
+alias v='vagrant status'
+alias vs='vagrant ssh'
+alias vu='vagrant up'
+alias vup='vagrant up --provision'
+alias vup-vmware='vagrant up --provision --provider vmware'
+alias vup-virtualbox='vagrant up --provision --provider virtualbox'
+alias vh='vagrant halt'
+alias vd='vagrant destroy'
+alias vp='vagrant provision'
+alias vr='vagrant reload'
