@@ -48,3 +48,6 @@
   email = rodrigo@pittlandia.net
 [github]
   user = rtopitt
+[grep]
+  extendRegexp = true
+  lineNumber = true
