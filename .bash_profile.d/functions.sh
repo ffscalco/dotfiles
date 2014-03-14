@@ -1,13 +1,9 @@
+# only for iTerm2
+# http://www.iterm2.com/#/section/documentation/escape_codes
 function setBackground() {
-  osascript -e "tell application \"iTerm\"
-    tell current terminal
-      tell current session
-        set background color to $1
-      end tell
-    end tell
-  end tell"
+  echo -e "\033]Ph${1}\033\\"
 }
-alias setBlackBackground='setBackground "{0,0,0}"'
+alias setBlackBackground='setBackground 000000'
 
 function ec2ssh() {
   INSTANCE="$1"
@@ -24,15 +20,15 @@ function ec2ssh() {
   then
     if [[ `echo "$DESCRIBE" | grep "production"` ]]
     then
-      setBackground "{15000,0,0}"
+      setBackground 250000
     fi
     if [[ `echo "$DESCRIBE" | grep "sandbox"` ]]
     then
-      setBackground "{0,0,15000}"
+      setBackground 000025
     fi
     ssh -t "$ADDRESS" $@
     STATUS=$?
-    setBackground "{0,0,0}"
+    setBackground 000000
     return $STATUS
   else
     return 1
