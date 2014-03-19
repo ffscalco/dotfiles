@@ -15,3 +15,7 @@ source $HOME/.bash_profile.d/ruby.sh
 [ -r $HOME/.bash_profile_extras ] && source $HOME/.bash_profile_extras
 
 export PATH="$HOME/bin:$PATH"
+
+# habilita direnv (https://github.com/zimbatm/direnv)
+# tem que ser a última coisa
+which direnv > /dev/null && eval "$(direnv hook bash)"

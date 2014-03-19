@@ -7,8 +7,10 @@
 export PATH=/usr/local/bin:$PATH
 
 # Make Sublime Text 2 the default editor
-export EDITOR="subl -w"
-export SVN_EDITOR="subl -w"
+# export EDITOR="subl -w" # não funfa com direnv
+export EDITOR="subl"
+# export SVN_EDITOR="subl -w"
+export SVN_EDITOR="subl"
 
 # Don’t clear the screen after quitting a manual page
 export MANPAGER="less -X"
