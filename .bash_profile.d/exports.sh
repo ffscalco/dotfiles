@@ -1,5 +1,5 @@
-# compilador para rvm
-export CC=gcc-4.2
+# # compilador para rvm
+# export CC=gcc-4.2
 
 # bug postgres + lion, ver:
 #  http://joneslee85.wordpress.com/2011/10/27/fix-postgres-permission-denied-issue-on-osx-lion/
