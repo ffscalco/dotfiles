@@ -46,29 +46,6 @@ function ec2log() {
   ec2ssh "$INSTANCE" "tail -f '$LOGFILE'"
 }
 
-# perf
-function set_perf_vars() {
-  # export RUBY_HEAP_MIN_SLOTS=1000000
-  # export RUBY_HEAP_SLOTS_INCREMENT=1000000
-  # export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
-  # export RUBY_GC_MALLOC_LIMIT=1000000000
-  # export RUBY_HEAP_FREE_MIN=500000
-  # export RUBY_GC_MALLOC_LIMIT=268435456 # 256 megabytes
-  export RUBY_GC_MALLOC_LIMIT=104857600 # 100 megabytes
-  export RUBY_HEAP_FREE_MIN=200000
-  export RUBY_HEAP_MIN_SLOTS=40000
-}
-function unset_perf_vars() {
-  # unset RUBY_HEAP_MIN_SLOTS
-  # unset RUBY_HEAP_SLOTS_INCREMENT
-  # unset RUBY_HEAP_SLOTS_GROWTH_FACTOR
-  # unset RUBY_GC_MALLOC_LIMIT
-  # unset RUBY_HEAP_FREE_MIN
-  unset RUBY_GC_MALLOC_LIMIT
-  unset RUBY_HEAP_FREE_MIN
-  unset RUBY_HEAP_MIN_SLOTS
-}
-
 # renames the current tab on iTerm2 (OS X only)
 function tabname() {
   echo -ne "\033]0;"$@"\007";
