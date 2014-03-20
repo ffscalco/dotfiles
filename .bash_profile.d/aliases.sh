@@ -82,10 +82,10 @@ alias pumpitup="osascript -e 'set volume 7'"
 alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
 
 # servers (homebrew)
-alias start_postgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
-alias stop_postgres='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
+alias start_postgres='postgres -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias stop_postgres='postgres -D /usr/local/var/postgres stop -s -m fast'
 alias start_mongodb='mongod run --config /usr/local/etc/mongod.conf'
-alias start_memcached='/usr/local/bin/memcached -v'
+alias start_memcached='/usr/local/opt/memcached/bin/memcached -v'
 alias start_mysql='mysql.server start'
 alias stop_mysql='mysql.server stop'
 alias start_redis='redis-server /usr/local/etc/redis.conf'
