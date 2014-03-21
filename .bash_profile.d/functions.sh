@@ -201,3 +201,28 @@ myfinance_all_tests () {
   RAILS_ENV=test IGNORE_GC_PERFORMANCE_FILE=true bundle exec rspec features/*_spec.rb
   echo
 }
+
+# via: http://blog.tinogomes.com/2014/03/21/dica-criando-branches-no-git/
+# fix-branch some bugfix with long name
+function fix-branch() {
+  local new_branch_name=$(echo "$*" | tr " " _)
+  git checkout master
+  # git checkout -b fix/$new_branch_name
+  grb create fix/$new_branch_name
+}
+
+# feature-branch some new feature with long name
+function feature-branch() {
+  local new_branch_name=$(echo "$*" | tr " " _)
+  git checkout master
+  # git checkout -b feature/$new_branch_name
+  grb create feature/$new_branch_name
+}
+
+# topic-branch some new unplanned feature with long name
+function topic-branch() {
+  local new_branch_name=$(echo "$*" | tr " " _)
+  git checkout master
+  # git checkout -b feature/$new_branch_name
+  grb create topic/$new_branch_name
+}
