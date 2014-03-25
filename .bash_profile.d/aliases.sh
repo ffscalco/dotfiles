@@ -118,12 +118,14 @@ alias gg='git grep --break --heading --line-number --color'
 alias integrate="unset_perf_vars && RAILS_ENV=test IGNORE_GC_PERFORMANCE_FILE=true time memusg bundle exec rake integrate && set_perf_vars && say 'integration finished'"
 alias integrate_lowmem="unset_perf_vars && bundle exec rake db:migrate db:test:prepare && RAILS_ENV=test IGNORE_GC_PERFORMANCE_FILE=true bundle exec rspec spec/helpers/* spec/routing/* spec/lib/* spec/mailers/* spec/workers/* && RAILS_ENV=test IGNORE_GC_PERFORMANCE_FILE=true bundle exec rspec spec/models/* && RAILS_ENV=test IGNORE_GC_PERFORMANCE_FILE=true bundle exec rspec spec/controllers/* && RAILS_ENV=test IGNORE_GC_PERFORMANCE_FILE=true bundle exec rake spec:javascript && RAILS_ENV=test IGNORE_GC_PERFORMANCE_FILE=true bundle exec rspec features/*_spec.rb && set_perf_vars && say 'integration finished'"
 alias tlog='tail -f log/development.log'
-alias bex="bundle exec"
 alias rs='script/rails server'
 alias rc='script/rails console'
 alias rg='script/rails generate'
 alias fs='foreman start -f Procfile.development'
 alias fsb='foreman start -f Procfile.benchmark'
+alias fr='foreman run '
+alias bex='bundle exec '
+alias frbex='foreman run bundle exec '
 alias branchspec="bundle exec rspec $(git diff --diff-filter=ACMRTUXB --name-only master -- spec test | egrep --color=never '_(spec|test).rb' | sed 's/src\///')"
 
 alias growl="growlnotify"
