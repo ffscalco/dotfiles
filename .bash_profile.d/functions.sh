@@ -26,7 +26,12 @@ function ec2ssh() {
     then
       setBackground 000025
     fi
-    ssh -t "$ADDRESS" $@
+    if [[ -n "$EC2_SSH_PRIVATE_KEY" ]]
+    then
+      ssh -i "$EC2_SSH_PRIVATE_KEY" -t "$ADDRESS" $@
+    else
+      ssh -t "$ADDRESS" $@
+    fi
     STATUS=$?
     setBackground 000000
     return $STATUS
