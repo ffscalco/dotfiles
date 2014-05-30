@@ -5,6 +5,15 @@ function setBackground() {
 }
 alias setBlackBackground='setBackground 000000'
 
+function ssh() {
+  if [[ -n "$EC2_SSH_PRIVATE_KEY" ]]
+  then
+    /usr/bin/ssh -i "$EC2_SSH_PRIVATE_KEY" $@
+  else
+    /usr/bin/ssh $@
+  fi
+}
+
 function ec2ssh() {
   INSTANCE="$1"
   shift
