@@ -1,11 +1,6 @@
 # encoding: utf-8
 Pry.config.editor = "subl -w"
 
-# Load plugins (only those I whitelist)
-Pry.config.should_load_plugins = false
-Pry.plugins["doc"].activate!
-Pry.plugins["nav"].activate!
-
 Pry.config.history.file = "~/.irb_history"
 
 Pry.config.prompt = proc do |obj, level, _|
@@ -38,8 +33,3 @@ begin
 rescue LoadError => err
   puts "no awesome_print :("
 end
-
-Pry.commands.alias_command 'c', 'continue'
-Pry.commands.alias_command 's', 'step'
-Pry.commands.alias_command 'n', 'next'
-Pry.commands.alias_command 'l', 'whereami'

@@ -41,6 +41,9 @@ if defined?(ActiveRecord)
 end
 
 prompt = "#{RUBY_VERSION}"
+if defined?(Rails)
+  prompt = "#{Rails.version}@#{RUBY_VERSION}"
+end
 
 IRB.conf[:PROMPT][:CUSTOM] = {
   :PROMPT_I =>"#{prompt} >> ",
@@ -56,12 +59,4 @@ IRB.conf[:PROMPT_MODE] = :CUSTOM
 # http://coderwall.com/p/6yqm-q?i=1&p=1&q=&t=shell
 def copy(*args)
   IO.popen('pbcopy', 'r+') { |clipboard| clipboard.puts args.map(&:inspect) }
-end
-
-begin
-  require 'pry'
-  Pry.start
-  exit
-rescue LoadError => e
-  warn "=> Unable to load pry"
 end
