@@ -1,8 +1,11 @@
-# enable chruby (https://github.com/postmodern/chruby)
-[ -r /usr/local/opt/chruby/share/chruby/chruby.sh ] && source /usr/local/opt/chruby/share/chruby/chruby.sh
-
-# enable auto-switching of Rubies specified by .ruby-version files
-[ -r /usr/local/opt/chruby/share/chruby/auto.sh ] && source /usr/local/opt/chruby/share/chruby/auto.sh
+if [ -n "$BASH_VERSION" ] || [ -n "$ZSH_VERSION" ]; then
+  # enable chruby (https://github.com/postmodern/chruby)
+  [ -r /usr/local/opt/chruby/share/chruby/chruby.sh ] && source /usr/local/opt/chruby/share/chruby/chruby.sh # mac
+  [ -r /usr/local/share/chruby/chruby.sh ] && source /usr/local/share/chruby/chruby.sh # ubuntu
+  # enable auto-switching of Rubies specified by .ruby-version files
+  [ -r /usr/local/opt/chruby/share/chruby/auto.sh ] && source /usr/local/opt/chruby/share/chruby/auto.sh # mac
+  [ -r /usr/local/share/chruby/auto.sh ] && source /usr/local/share/chruby/auto.sh # ubuntu
+fi
 
 function set_perf_vars() {
   # export RUBY_HEAP_MIN_SLOTS=1000000
