@@ -44,10 +44,10 @@
 [help]
   autocorrect = 1
 [user]
-  name = Rodrigo Tassinari de Oliveira
-  email = rodrigo@pittlandia.net
+  email = fabiano.scalco@gmail.com
+  name = Fabiano F. Scalco
 [github]
-  user = rtopitt
+  user = ffscalco
 [grep]
   extendRegexp = true
   lineNumber = true

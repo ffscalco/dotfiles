@@ -14,9 +14,9 @@ function set_perf_vars() {
   # export RUBY_GC_MALLOC_LIMIT=1000000000
   # export RUBY_HEAP_FREE_MIN=500000
   # export RUBY_GC_MALLOC_LIMIT=268435456 # 256 megabytes
-  export RUBY_GC_MALLOC_LIMIT=104857600 # 100 megabytes
-  export RUBY_HEAP_FREE_MIN=200000
-  export RUBY_HEAP_MIN_SLOTS=40000
+  # export RUBY_GC_MALLOC_LIMIT=104857600 # 100 megabytes
+  # export RUBY_HEAP_FREE_MIN=200000
+  # export RUBY_HEAP_MIN_SLOTS=40000
 }
 function unset_perf_vars() {
   # unset RUBY_HEAP_MIN_SLOTS
@@ -24,9 +24,9 @@ function unset_perf_vars() {
   # unset RUBY_HEAP_SLOTS_GROWTH_FACTOR
   # unset RUBY_GC_MALLOC_LIMIT
   # unset RUBY_HEAP_FREE_MIN
-  unset RUBY_GC_MALLOC_LIMIT
-  unset RUBY_HEAP_FREE_MIN
-  unset RUBY_HEAP_MIN_SLOTS
+  # unset RUBY_GC_MALLOC_LIMIT
+  # unset RUBY_HEAP_FREE_MIN
+  # unset RUBY_HEAP_MIN_SLOTS
 }
 
 # Ruby performance variables

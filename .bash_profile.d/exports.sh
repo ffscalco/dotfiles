@@ -34,7 +34,7 @@ export GREP_OPTIONS="--color=auto"
 export GREP_COLOR="4;33"
 
 # export JAVA_HOME='/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home'
-export JAVA_HOME='/Library/Java/Home'
+# export JAVA_HOME='/Library/Java/Home'
 
 export BLUE="\[\033[0;34m\]"
 export NO_COLOR="\[\e[0m\]"
